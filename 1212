@@ -1,0 +1,147 @@
+#1 задание
+
+name = input("Введите ваше имя: ")
+age = input("Введите ваш возраст: ")
+
+print(f"Привет {name}, тебе {age}!")
+
+#2 задание
+
+age = input("Введите ваш возраст: ")
+  if age > 18:
+    print("Вход разрешен")
+  else:
+    print("Вход запрещен")
+
+#3 задание
+
+import random
+
+number = random.randint(1, 10)
+attempts = 3
+
+print("Я загадал число от 1 до 10, отгадай его")
+
+for i in range(attempts):
+    guess = int(input("Введи число: "))
+
+    if guess == number:
+        print("Поздравляю, ты угадал!")
+        break
+    elif guess > number:
+        print("Меньше")
+    else:
+        print("Больше")
+
+    print(f"Осталось попыток: {attempts - i - 1}")
+
+else:
+    print(f"Ты не угадал, число было: {number}")
+
+#4 задание 
+
+start = int(input("Введите число от "))
+end = int(input("Введите число до "))
+
+for number in range(start, end + 1):
+    print(number)
+
+
+#5 заадние 
+
+n = int(input("Введите число n: "))
+
+for number in range(n, 0, -1):
+    if number % 2 == 0:
+        print(number, end=" ")
+
+
+#6 задание 
+
+n = int(input("Введите число n: "))
+
+factorial = 1
+
+for i in range(1, n + 1):
+    factorial *= i
+
+print(f"Факториал числа {n} = {factorial}")
+
+
+#7 задание 
+
+score = int(input("Введите количество баллов (0-100): "))
+
+if score >= 90:
+    grade = "Отлично"
+elif score >= 75:
+    grade = "Хорошо"
+elif score >= 60:
+    grade = "Удовлетворительно"
+elif score >= 0:
+    grade = "Неудовлетворительно"
+else:
+    grade = "Ошибка ввода"
+
+print(f"Оценка: {grade}")
+
+
+#8 задание 
+
+a = float(input("Введите первое число (a): "))
+b = float(input("Введите второе число (b): "))
+operation = input("Введите операцию (+, -, *, /): ")
+
+if operation == "+":
+    result = a + b
+    print("Результат:", result)
+
+elif operation == "-":
+    result = a - b
+    print("Результат:", result)
+
+elif operation == "*":
+    result = a * b
+    print("Результат:", result)
+
+elif operation == "/":
+    if b == 0:
+        print("Деление на ноль")
+    else:
+        result = a / b
+        print("Результат:", result)
+
+else:
+    print("Неверная операция")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
