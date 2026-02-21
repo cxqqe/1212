@@ -1,0 +1,33 @@
+class Cat:
+    def __init__(self, name):
+        self.name = name
+
+    def eat(self):
+        print(f"{self.name} ест ")
+
+    def drink(self):
+        print(f"{self.name} пьет ")
+
+    def sleep(self):
+        print(f"{self.name} спит ")
+
+    def play(self):
+        print(f"{self.name} играет ")
+
+cat = Cat(input("Введите имя котика: "))
+
+while True:
+    action = input("Выбери действие (есть, пить, спать, играть, выйти): ").lower()
+    if action == "есть":
+        cat.eat()
+    elif action == "пить":
+        cat.drink()
+    elif action == "спать":
+        cat.sleep()
+    elif action == "играть":
+        cat.play()
+    elif action == "выйти":
+        print(f"{cat.name} говорит: Пока!")
+        break
+    else:
+        print("Неизвестное действие")
