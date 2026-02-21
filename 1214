@@ -1,0 +1,38 @@
+class Food:
+    def __init__(self, name, calories):
+        self.name = name
+        self.calories = calories
+
+    def info(self):
+        print(f"Еда: {self.name}, калории: {self.calories}")
+
+
+class Cat:
+    def __init__(self, name):
+        self.name = name
+        self.energy = 50  # начальная энергия котика
+
+    def eat(self, food):
+        self.energy += food.calories
+        print(f"{self.name} съел {food.name} и энергия теперь {self.energy}")
+
+    def sleep(self):
+        self.energy += 100
+        print(f"{self.name} поспал и энергия теперь {self.energy}")
+
+    def play(self):
+        if self.energy >= 100:
+            self.energy -= 100
+            print(f"{self.name} поиграл и энергия теперь {self.energy}")
+        else:
+            print(f"{self.name} слишком устал, чтобы играть")
+
+cat = Cat("Мурзик")
+fish = Food("Рыбка", 30)
+milk = Food("Молоко", 20)
+
+cat.eat(fish)
+cat.play()
+cat.sleep()
+cat.eat(milk)
+cat.play()
