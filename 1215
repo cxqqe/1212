@@ -1,3 +1,4 @@
+#Задание 1 
 class Animal:
     def __init__(self, name, age):
         self.name = name
@@ -30,3 +31,91 @@ dog.sleep()
 cat.eat()
 cat.meow()
 cat.sleep()
+
+# Задание 2
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def age(self, years):
+        print(f"{self.name} {years} лет")
+
+
+class Driver(Person):
+    def __init__(self, name, license_number):
+        super().__init__(name)
+        self.license_number = license_number
+
+
+driver = Driver("Алексей", "AB123456")
+driver.age(30)
+print(f"Номер водительского удостоверения: {driver.license_number}")
+
+
+# Задание 3
+class Vehicle:
+    def __init__(self, speed):
+        self.speed = speed
+
+    def move(self):
+        print(f"Двигается со скоростью {self.speed} км/ч")
+
+
+class Car(Vehicle):
+    pass
+
+
+class Bicycle(Vehicle):
+    pass
+
+
+car = Car(120)
+bicycle = Bicycle(20)
+car.move()
+bicycle.move()
+
+
+# Задание 4
+class Device:
+    def turn_on(self):
+        print("Устройство включено")
+
+    def turn_off(self):
+        print("Устройство выключено")
+
+
+class Phone(Device):
+    pass
+
+
+class Laptop(Device):
+    pass
+
+
+phone = Phone()
+laptop = Laptop()
+phone.turn_on()
+laptop.turn_off()
+
+
+# Задание 5
+class ProgrammingLanguage:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print(f"Привет из {self.name}")
+
+
+class PythonLang(ProgrammingLanguage):
+    pass
+
+
+class JavaLang(ProgrammingLanguage):
+    pass
+
+
+python = PythonLang("Python")
+java = JavaLang("Java")
+python.greet()
+java.greet()
