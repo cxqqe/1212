@@ -1,0 +1,76 @@
+import random
+
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+        self.hunger = 50
+        self.energy = 100
+        self.happiness = 50
+        self.is_dirty = False
+
+    def eat(self):
+        if self.hunger > 10:
+            print(f"\n{self.name} с аппетитом поела!")
+            self.hunger -= 20
+            self.happiness += 5
+        else:
+            print(f"\n{self.name} не голодна.")
+
+    def walk(self):
+        if self.energy > 20:
+            events = [
+                "увидела кота и погналась за ним", 
+                "сходила в туалет"
+            ]
+            event = random.choice(events)
+            print(f"\nНа прогулке {self.name} {event}!")
+            
+            self.energy -= 30
+            self.happiness += 20
+            self.hunger += 10
+            
+            if event == "сходила в туалет":
+                self.is_dirty = True
+        else:
+            print(f"\n{self.name} слишком устала для прогулки.")
+
+    def sleep(self):
+        print(f"\n{self.name} сладко спит...")
+        self.energy = 100
+        self.hunger += 20
+
+    def clean_up(self):
+        if self.is_dirty:
+            print(f"\nВы убрали за {self.name}. Улица снова чистая!")
+            self.is_dirty = False
+        else:
+            print("\nЗдесь и так чисто.")
+
+    def status(self):
+        print(f"\n--- Статус {self.name} ({self.breed}) ---")
+        print(f"Голод: {self.hunger}/100 | Энергия: {self.energy}/100 | Счастье: {self.happiness}")
+        if self.is_dirty:
+            print("(!) Нужно убрать за собакой!")
+        print("------------------------------")
+
+my_dog = Dog("Бобик", "Ретривер")
+
+while True:
+    my_dog.status()
+    print("1 - Покормить | 2 - Гулять | 3 - Спать | 4 - Убрать | 5 - Выход")
+    choice = input("Выберите действие: ")
+
+    if choice == "1":
+        my_dog.eat()
+    elif choice == "2":
+        my_dog.walk()
+    elif choice == "3":
+        my_dog.sleep()
+    elif choice == "4":
+        my_dog.clean_up()
+    elif choice == "5":
+        print("Пока!")
+        break
+    else:
+        print("Неверный ввод.")
